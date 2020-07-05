@@ -1604,19 +1604,20 @@ end
 
 
 
-RegisterCommand('uber', function(source, args, rawCommand)
+RegisterCommand('uberaktif', function(source, args, rawCommand)
  local pedxd = GetPlayerPed( -1 )
  if not starteduber and uerdeliveryamount ~= 10 then
 	exports['mythic_notify']:SendAlert('success', 'Uber Delivery: Active [Wait for Delivery]')
 	 starteduber = true
 	 hasdelivery = false
 	-- print(starteduber)
-	elseif starteduber then
-	exports['mythic_notify']:SendAlert('error', 'Uber Delivery: Deactivated')
-	 starteduber = false
-	 hasdelivery = true
-	 -- print(starteduber)	
-	 removeblips()
-	end
+end)
 
+RegisterCommand("uberiptal", function(source, args, rawCommand)
+    local pedlmao = GetPlayerPed(-1)
+    if starteduber then
+    exports['mythic_notify']:SendAlert('error', "Uber Delivery: Deactivated")
+    starteduber = false
+    hasdelivery = true
+    removeblips() 
 end)

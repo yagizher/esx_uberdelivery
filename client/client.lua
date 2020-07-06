@@ -1616,5 +1616,6 @@ RegisterCommand("uberiptal", function(source, args, rawCommand)
     exports['mythic_notify']:SendAlert('error', "Uber Delivery: Deactivated")
     starteduber = false
     hasdelivery = true
-    removeblips() 
+    removeblips()
+    end
 end)
